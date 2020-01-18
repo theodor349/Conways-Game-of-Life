@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\theod\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\theod\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Conways Game of Life.1433926442.00" t="ExcludeRecursive" />
+    <e p="C:\Users\theod\Documents\GitHub\Conways Game of Life" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Components" t="Include">
+            <e p="CellComponent.cs" t="Include" />
+            <e p="WorldSpawnSize.cs" t="Include" />
+          </e>
+          <e p="Systems" t="Include">
+            <e p="ChangeCellColorSystem.cs" t="Include" />
+            <e p="ChangeCellStateSystem.cs" t="Include" />
+            <e p="SpawnSystem.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Conways Game of Life.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
