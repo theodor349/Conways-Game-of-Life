@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class SpawnSystem : ComponentSystem
 {
+    public static int2 WorldSize;
+    
     private EntityArchetype cellArchetype;
     private Material deadMaterial;
     private Mesh planeMesh;
@@ -37,6 +39,8 @@ public class SpawnSystem : ComponentSystem
     {
         Entities.ForEach((Entity entity, ref WorldSpawnSize worldSize) =>
         {
+            WorldSize = new int2(worldSize.Width, worldSize.Height);
+            
             for (int x = 0; x < worldSize.Width; x++)
             {
                 for (int y = 0; y < worldSize.Height; y++)
