@@ -4,6 +4,7 @@ using Unity.Rendering;
 using UnityEditor;
 using UnityEngine;
 
+[UpdateAfter(typeof(ChangeCellStateSystem))]
 public class ChangeCellColorSystem : JobComponentSystem
 {
     private Material deadMaterial;
@@ -25,10 +26,12 @@ public class ChangeCellColorSystem : JobComponentSystem
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
         var manager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        Entities.WithStructuralChanges().ForEach((Entity entity, ref CellComponent cell, in ChangeCellStateComponent change) =>
+        Entities.WithStructuralChanges().ForEach((Entity entity, ref CellComponent cell) =>
         {
-            cell.IsAlive = change.ChangeTo;
-            manager.RemoveComponent(entity, typeof(ChangeCellStateComponent));
+            if(cell.IsAlive == cell.ChangeTo)
+                return;
+            
+            cell.IsAlive = cell.ChangeTo;
             manager.RemoveComponent(entity, typeof(RenderMesh));
             
             manager.AddSharedComponentData(entity, new RenderMesh()

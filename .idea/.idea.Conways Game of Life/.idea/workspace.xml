@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a8e1b3b-2c2a-4330-9089-0c7d92550ad3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" afterDir="false" />
     </list>
@@ -36,10 +38,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" />
       </list>
     </option>
@@ -80,10 +82,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="3036">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="23324">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3036" />
+      <option name="pid" value="23324" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -102,6 +104,8 @@
       <workItem from="1579340842534" duration="7621000" />
       <workItem from="1579428843701" duration="12306000" />
       <workItem from="1579451885377" duration="1098000" />
+      <workItem from="1579509828321" duration="1270000" />
+      <workItem from="1579601958015" duration="3713000" />
     </task>
     <servers />
   </component>
@@ -135,16 +139,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs</url>
-          <line>50</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" initialLine="50">
+          <line>33</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" initialLine="33">
             <startOffsets>
-              <option value="1514" />
+              <option value="979" />
             </startOffsets>
             <endOffsets>
-              <option value="1533" />
+              <option value="988" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
