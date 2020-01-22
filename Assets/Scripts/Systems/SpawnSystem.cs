@@ -55,10 +55,6 @@ public class SpawnSystem : ComponentSystem
                         alive = true;
                     else if (x == 5 && y == 4)
                         alive = true;
-//                    else if (x == 4 && y == 3)
-//                        alive = true;
-//                    else if (x == 4 && y == 5)
-//                        alive = true;
 
                     var c = PostUpdateCommands.CreateEntity(cellArchetype);
                     PostUpdateCommands.SetComponent(c, new LocalToWorld());

@@ -14,6 +14,7 @@
           <e p="Systems" t="Include">
             <e p="ChangeCellColorSystem.cs" t="Include" />
             <e p="ChangeCellStateSystem.cs" t="Include" />
+            <e p="InputSystem.cs" t="Include" />
             <e p="SpawnSystem.cs" t="Include" />
           </e>
         </e>

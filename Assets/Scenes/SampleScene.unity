@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9eea249e314491e9ebaeb0159832e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 10
-  Height: 10
+  Width: 100
+  Height: 100
   TickRate: 0.5
 --- !u!114 &880682452
 MonoBehaviour:

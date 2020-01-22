@@ -160,18 +160,38 @@ public class ChangeCellStateSystem : JobComponentSystem
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
+        // Change speed
+        if(Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.Equals))
+        {
+            if (tickRate > 2)
+                tickRate += 1;
+            else 
+                tickRate -= 0.1f;
+            if (tickRate < 0.1f)
+                tickRate = 0.1f;
+        }
+        else if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            if (tickRate >= 2)
+                tickRate += 1;
+            else
+                tickRate += 0.1f;
+        }
+
         // Sim started
         if (Input.GetKeyDown(KeyCode.Space))
             isRunning = !isRunning;
         if (!isRunning) 
             return inputDeps;
 
+        Debug.Log("TickRate: " + tickRate + " time: " + timePassed);
         // Time 
         timePassed += UnityEngine.Time.deltaTime;
         if (timePassed >= tickRate)
             timePassed = 0f;
         else
             return inputDeps;
+        
 
         // Get other cells
         var otherCells = GetEntityQuery(ComponentType.ReadOnly<CellComponent>(), ComponentType.ReadOnly<Translation>());

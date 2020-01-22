@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a8e1b3b-2c2a-4330-9089-0c7d92550ad3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" afterDir="false" />
     </list>
@@ -33,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/ScriptBehaviourUpdateOrder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/Iterators/EntityQuery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/f4/38e96eb6/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -41,6 +42,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" />
       </list>
@@ -108,6 +110,7 @@
       <workItem from="1579601958015" duration="8663000" />
       <workItem from="1579692769529" duration="5067000" />
       <workItem from="1579698429703" duration="1079000" />
+      <workItem from="1579704825029" duration="2665000" />
     </task>
     <servers />
   </component>
@@ -139,19 +142,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs</url>
-          <line>152</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" initialLine="155">
-            <startOffsets>
-              <option value="5221" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5234" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
