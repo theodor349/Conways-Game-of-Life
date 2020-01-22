@@ -47,11 +47,24 @@ public class SpawnSystem : ComponentSystem
             {
                 for (int y = 0; y < worldSize.Height; y++)
                 {
+                    bool alive = false;
+
+                    if (x == 4 && y == 4)
+                        alive = true;
+                    else if (x == 3 && y == 4)
+                        alive = true;
+                    else if (x == 5 && y == 4)
+                        alive = true;
+//                    else if (x == 4 && y == 3)
+//                        alive = true;
+//                    else if (x == 4 && y == 5)
+//                        alive = true;
+
                     var c = PostUpdateCommands.CreateEntity(cellArchetype);
                     PostUpdateCommands.SetComponent(c, new LocalToWorld());
                     PostUpdateCommands.SetSharedComponent(c, new RenderMesh(){material = deadMaterial, mesh = planeMesh});
                     PostUpdateCommands.SetComponent(c, new Translation(){Value = new float3(x, 0, y)});
-                    PostUpdateCommands.SetComponent(c, new CellComponent(){ChangeTo = x % 2 != 0});
+                    PostUpdateCommands.SetComponent(c, new CellComponent(){ChangeTo = alive});
                     PostUpdateCommands.SetComponent(c, new Scale(){Value = 0.1f});
                 }
             }

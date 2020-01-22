@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" afterDir="false" />
     </list>
@@ -26,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/IJobChunk.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/ComponentSystemGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.5.0-preview.9/Unity.Collections/NativeSort.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/IJobForEach.gen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/f6/8043922b/JobHandle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/JobComponentSystem.cs" root0="SKIP_HIGHLIGHTING" />
@@ -34,14 +33,15 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/ScriptBehaviourUpdateOrder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/Iterators/EntityQuery.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/437BA245-D840-4784-B9FB-AB9B439AC908/f4/38e96eb6/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" />
       </list>
     </option>
@@ -82,10 +82,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="23324">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="20424">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="23324" />
+      <option name="pid" value="20424" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -105,7 +105,9 @@
       <workItem from="1579428843701" duration="12306000" />
       <workItem from="1579451885377" duration="1098000" />
       <workItem from="1579509828321" duration="1270000" />
-      <workItem from="1579601958015" duration="3713000" />
+      <workItem from="1579601958015" duration="8663000" />
+      <workItem from="1579692769529" duration="5067000" />
+      <workItem from="1579698429703" duration="1079000" />
     </task>
     <servers />
   </component>
@@ -139,16 +141,16 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs</url>
-          <line>33</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" initialLine="33">
+          <line>152</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" initialLine="155">
             <startOffsets>
-              <option value="979" />
+              <option value="5221" />
             </startOffsets>
             <endOffsets>
-              <option value="988" />
+              <option value="5234" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
