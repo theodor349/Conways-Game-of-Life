@@ -184,7 +184,6 @@ public class ChangeCellStateSystem : JobComponentSystem
         if (!isRunning) 
             return inputDeps;
 
-        Debug.Log("TickRate: " + tickRate + " time: " + timePassed);
         // Time 
         timePassed += UnityEngine.Time.deltaTime;
         if (timePassed >= tickRate)

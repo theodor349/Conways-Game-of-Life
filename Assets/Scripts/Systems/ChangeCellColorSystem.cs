@@ -18,7 +18,7 @@ public class ChangeCellColorSystem : JobComponentSystem
         deadMaterial = new Material(Shader.Find("Standard")) {color = Color.black};
         aliveMaterial = new Material(Shader.Find("Standard")) {color = Color.white};
         // Mesh
-        var p = ObjectFactory.CreatePrimitive(PrimitiveType.Plane);
+        var p = GameObject.CreatePrimitive(PrimitiveType.Plane);
         planeMesh = p.GetComponent<MeshFilter>().mesh;
         Object.Destroy(p);
     }

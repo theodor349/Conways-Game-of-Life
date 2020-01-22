@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a8e1b3b-2c2a-4330-9089-0c7d92550ad3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Conways Game of Life/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +27,8 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/IJobForEach.gen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/f6/8043922b/JobHandle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.2.0-preview.11/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.5.0-preview.17/Unity.Entities/JobComponentSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CD36D161-0EDB-4909-9A63-E42167ECF462/0b/29149216/NativeArray`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -40,10 +42,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/WorldSpawnSize.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/CellComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/SpawnSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellColorSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/ChangeCellStateSystem.cs" />
       </list>
     </option>
@@ -110,7 +112,7 @@
       <workItem from="1579601958015" duration="8663000" />
       <workItem from="1579692769529" duration="5067000" />
       <workItem from="1579698429703" duration="1079000" />
-      <workItem from="1579704825029" duration="2665000" />
+      <workItem from="1579704825029" duration="3857000" />
     </task>
     <servers />
   </component>

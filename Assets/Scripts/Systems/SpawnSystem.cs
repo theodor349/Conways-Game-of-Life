@@ -1,6 +1,4 @@
-﻿using Unity.Collections;
-using Unity.Entities;
-using Unity.Jobs;
+﻿using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Rendering;
 using Unity.Transforms;
@@ -30,7 +28,7 @@ public class SpawnSystem : ComponentSystem
         deadMaterial = new Material(Shader.Find("Standard"));
         deadMaterial.color = Color.black;
         // Mesh
-        var p = ObjectFactory.CreatePrimitive(PrimitiveType.Plane);
+        var p = GameObject.CreatePrimitive(PrimitiveType.Plane);
         planeMesh = p.GetComponent<MeshFilter>().mesh;
         Object.Destroy(p);
     }
