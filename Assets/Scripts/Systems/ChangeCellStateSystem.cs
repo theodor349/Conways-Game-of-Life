@@ -11,7 +11,7 @@ using UnityEngine.PlayerLoop;
 
 public class ChangeCellStateSystem : JobComponentSystem
 {
-    public static float tickRate = 1f;
+    public static float TickRate = 1f;
     
     private bool isRunning;
     private float timePassed = 0f;
@@ -51,22 +51,23 @@ public class ChangeCellStateSystem : JobComponentSystem
 
         private bool GetStateOfCell(float x, float z)
         {
+            // Make it tillable 
             if (x < 0)
                 x = Width - 1;
             else if (x >= Width)
                 x = 0;
-            
             if (z < 0)
                 z = Height - 1;
             else if (z >= Height)
                 z = 0;
             
+            // Return the state of that cell
             var c = OtherCells[(int) (z + x * Height)];
             return c.IsAlive;
         }
     }
 
-    private struct GetOtherCells : IJob
+    private struct SortOtherCellsJob : IJob
     {
         public NativeArray<CellComponent> Cells;
         public NativeArray<Translation> Positions;
@@ -74,138 +75,154 @@ public class ChangeCellStateSystem : JobComponentSystem
         public int Height;
         public void Execute()
         {
-            var cc = new NativeArray<CellComponent>(N, Allocator.Temp);
-            var pc = new NativeArray<Translation>(N, Allocator.Temp);
-            // Increment the size of the sub-arrays to be merged (sorted)
+            var cellCopy = new NativeArray<CellComponent>(N, Allocator.Temp);
+            var posCopy = new NativeArray<Translation>(N, Allocator.Temp);
+            // Increment the size of the sub-arrays to be merged (s=1, s=2, s=4...)
             for (int size = 1; size < N; size *= 2)
             {
                 // Low Left index 
-                int l1 = 0;
-                // Index for inserting into temp arrays
+                int leftLowIndex = 0;
+                // Index of temp arrays
                 int k = 0;
-                while (l1 + size < N)
+                while (leftLowIndex + size < N)
                 {
-                    // High Left index
-                    int h1 = l1 + size - 1;
-                    // Left High Index
-                    int l2 = h1 + 1;
-                    // Right High Index
-                    int h2 = l2 + size - 1;
+                    // Set Low and High Index for Left and Right side 
+                    int leftHighIndex = leftLowIndex + size - 1;
+                    int rightLowIndex = leftHighIndex + 1;
+                    int rightHighIndex = rightLowIndex + size - 1;
                     // In case Right High extends further than the array length
-                    if (h2 >= N)
-                        h2 = N - 1;
+                    if (rightHighIndex >= N)
+                        rightHighIndex = N - 1;
                     
                     // Index for Left Array
-                    int i = l1;
+                    int li = leftLowIndex;
                     // Index for Right Array
-                    int j = l2;
-                    while (i <= h1 && j <= h2)
+                    int ri = rightLowIndex;
+                    while (li <= leftHighIndex && ri <= rightHighIndex)
                     {
                         // Sort
-                        if (CompCells(Positions[i], Positions[j], Height))
+                        if (CompCells(Positions[li], Positions[ri], Height))
                         {
-                            cc[k] = Cells[i];
-                            pc[k] = Positions[i];
-                            i++;
+                            cellCopy[k] = Cells[li];
+                            posCopy[k] = Positions[li];
+                            li++;
                             k++;
                         }
                         else
                         {
-                            cc[k] = Cells[j];
-                            pc[k] = Positions[j];
-                            j++;
+                            cellCopy[k] = Cells[ri];
+                            posCopy[k] = Positions[ri];
+                            ri++;
                             k++;
                         }
                     }
                     
                     // Insert the rest of the arrays
-                    while (i <= h1)
+                    while (li <= leftHighIndex)
                     {
-                        cc[k] = Cells[i];
-                        pc[k] = Positions[i];
-                        i++;
+                        cellCopy[k] = Cells[li];
+                        posCopy[k] = Positions[li];
+                        li++;
                         k++;
                     }
-                    while (j <= h2)
+                    while (ri <= rightHighIndex)
                     {
-                        cc[k] = Cells[j];
-                        pc[k] = Positions[j];
-                        j++;
+                        cellCopy[k] = Cells[ri];
+                        posCopy[k] = Positions[ri];
+                        ri++;
                         k++;
                     }
                     
                     // Increment the Left Low Array to the next one
-                    l1 = h2 + 1;
+                    leftLowIndex = rightHighIndex + 1;
                 }
 
-                for (int i = l1; k < N; i++)
+                // Insert the rest of the array, in case not everything have been copied allready
+                for (int i = leftLowIndex; k < N; i++)
                 {
-                    cc[k] = Cells[i];
-                    pc[k] = Positions[i];
+                    cellCopy[k] = Cells[i];
+                    posCopy[k] = Positions[i];
                     k++;
                 }
                 
-                NativeArray<CellComponent>.Copy(cc, Cells);
-                NativeArray<Translation>.Copy(pc, Positions);
+                NativeArray<CellComponent>.Copy(cellCopy, Cells);
+                NativeArray<Translation>.Copy(posCopy, Positions);
             }
-            cc.Dispose();
-            pc.Dispose();
+            cellCopy.Dispose();
+            posCopy.Dispose();
         }
 
         private bool CompCells(Translation a, Translation b, int height)
         {
+            // Sorts them in a Col by Col layout (0,0)(0,1)(1,0)(1,1)...
             return a.Value.z + a.Value.x * height <= b.Value.z + b.Value.x * height;
         }
     }
 
     protected override JobHandle OnUpdate(JobHandle inputDeps)
     {
+        UpdateSimVariables();
+        if (ShouldUpdate())
+            return UpdateCells(inputDeps);
+        return inputDeps;
+    }
+
+    private void UpdateSimVariables()
+    {
         // Change speed
         if(Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.Equals))
         {
-            if (tickRate > 2)
-                tickRate += 1;
+            if (TickRate > 2)
+                TickRate += 1;
             else 
-                tickRate -= 0.1f;
-            if (tickRate < 0.1f)
-                tickRate = 0.1f;
+                TickRate -= 0.1f;
+            if (TickRate < 0.1f)
+                TickRate = 0.1f;
         }
         else if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
         {
-            if (tickRate >= 2)
-                tickRate += 1;
+            if (TickRate >= 2)
+                TickRate += 1;
             else
-                tickRate += 0.1f;
+                TickRate += 0.1f;
         }
 
         // Sim started
         if (Input.GetKeyDown(KeyCode.Space))
             isRunning = !isRunning;
+    }
+    
+    private bool ShouldUpdate()
+    {
         if (!isRunning) 
-            return inputDeps;
+            return false;
 
         // Time 
         timePassed += UnityEngine.Time.deltaTime;
-        if (timePassed >= tickRate)
+        if (timePassed >= TickRate)
             timePassed = 0f;
         else
-            return inputDeps;
+            return false;
         
+        return true;
+    }
 
+    private JobHandle UpdateCells(JobHandle inputDeps)
+    {
         // Get other cells
         var otherCells = GetEntityQuery(ComponentType.ReadOnly<CellComponent>(), ComponentType.ReadOnly<Translation>());
         var cells = otherCells.ToComponentDataArray<CellComponent>(Allocator.Persistent);
         var pos = otherCells.ToComponentDataArray<Translation>(Allocator.Persistent);
 
-        // Get other cells
-        var getOtherCellsJob = new GetOtherCells()
+        // Sort other cells
+        var sortOtherCellsJob = new SortOtherCellsJob()
         {
             Cells = cells,
             Positions = pos,
             N = cells.Length,
             Height = SpawnSystem.WorldSize.y
         }.Schedule(inputDeps);
-        getOtherCellsJob.Complete();
+        sortOtherCellsJob.Complete();
         
         // Actual job
         var cellStateJob = new CellStateJob()
@@ -213,11 +230,12 @@ public class ChangeCellStateSystem : JobComponentSystem
             OtherCells = cells,
             Width = SpawnSystem.WorldSize.x,
             Height = SpawnSystem.WorldSize.y
-        }.Schedule(this, getOtherCellsJob);
-        
+        }.Schedule(this, sortOtherCellsJob);
         cellStateJob.Complete();
-        cells.Dispose();
+        
+        // Remove unused memory
         pos.Dispose();
+        cells.Dispose();
         return cellStateJob;
     }
 }

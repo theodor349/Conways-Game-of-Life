@@ -28,12 +28,13 @@ public class ChangeCellColorSystem : JobComponentSystem
         var manager = World.DefaultGameObjectInjectionWorld.EntityManager;
         Entities.WithStructuralChanges().ForEach((Entity entity, ref CellComponent cell) =>
         {
+            // If nothing changed
             if(cell.IsAlive == cell.ChangeTo)
                 return;
-            
             cell.IsAlive = cell.ChangeTo;
+
+            // Remove and add new render
             manager.RemoveComponent(entity, typeof(RenderMesh));
-            
             manager.AddSharedComponentData(entity, new RenderMesh()
             {
                 material = cell.IsAlive ? aliveMaterial : deadMaterial,
